@@ -1,7 +1,17 @@
+@Entity()
 export class Deal {
-  id: string;
-  restaurantName: string;
-  description: string;
-  price: number;
-  date: string;
+  @PrimaryGeneratedColumn('uuid')
+  id!: string;
+
+  @Column()
+  restaurantName!: string;
+
+  @Column()
+  address!: string;
+
+  @Column()
+  price!: number;
+
+  @ManyToOne(() => User, { eager: true })
+  owner!: User;
 }
