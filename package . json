@@ -1,0 +1,9 @@
+Plateproof-backend/
+  package.json        ✅ (must exist)
+  tsconfig.json       ✅
+  nest-cli.json       ✅
+  tsconfig.build.json ✅
+  src/
+    main.ts           ✅ (the code above)
+    app.module.ts     ✅
+    ...your modules (auth, user, deal, rating, application, dispute)
