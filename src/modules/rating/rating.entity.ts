@@ -1,7 +1,14 @@
+@Entity()
 export class Rating {
-  id: string;
-  userId: string;   // who rated
-  dealId: string;   // what deal they rated
-  score: number;    // 1–5 rating
-  comment: string;  // optional text
+  @PrimaryGeneratedColumn('uuid')
+  id!: string;
+
+  @Column()
+  score!: number;
+
+  @ManyToOne(() => User, { eager: true })
+  user!: User;
+
+  @ManyToOne(() => Deal, { eager: true })
+  deal!: Deal;
 }
